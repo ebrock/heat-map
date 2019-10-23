@@ -7,24 +7,41 @@
 	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Open+Sans&display=swap" rel="stylesheet">
 </head>
 <style>
-
+  .title {
+    font-family: Arial;
+    font-size: 40px;
+    text-align: center;
+  }
 </style>
 <body>
     <script type="text/javascript">
       var req = new XMLHttpRequest();
       req.open(
         "GET",
-        "",
+        "https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/global-temperature.json",
         true
       );
 
       req.onload = function() {
-        var dataset = JSON.parse(req.responseText);
+        var json = JSON.parse(req.responseText);
+        var dataset = json.monthlyVariance;
+        var baseTemp = json.baseTemperature;
 
         const w = 1000;
         const h = 500;
         const padding = 60;
-      }
+
+        //  Look at scaleSequential and color interpolation.
+        //  Also look into scaleBand.
+      };
+
+      req.send();
+
+      d3.select("body")
+        .append("h1")
+        .attr("id", "title")
+        .attr("class", "title")
+        .text("Global Surface Temp Heat Map");
 
     </script>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
