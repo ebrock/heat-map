@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Global Surface Temp Heat Map</title>
+  <meta charset="utf-8" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.12.0/d3.js" charset="utf-8"></script>
+	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Open+Sans&display=swap" rel="stylesheet">
+</head>
+<style>
+
+</style>
+<body>
+    <script type="text/javascript">
+      var req = new XMLHttpRequest();
+      req.open(
+        "GET",
+        "",
+        true
+      );
+
+      req.onload = function() {
+        var dataset = JSON.parse(req.responseText);
+
+        const w = 1000;
+        const h = 500;
+        const padding = 60;
+      }
+
+    </script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <div id="app">
+    </div>
+</body>
+
+</html>
